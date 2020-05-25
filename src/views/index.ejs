@@ -1,13 +1,13 @@
 <% if (messages.success) { %>
   <div class="form-header">
-  <h1>Github Multi-Item Interactor!</h1>
+  <h1>Github Multi-Item Interactor</h1>
 </div>
   <div class="flash flash-success"><%= messages.success %></div>
 <% } else { %>
 
 <div class="form-header">
-  <h1>Welcome to Github Multi-Item Interactor!</h1>
-  <h2>You can use this form to comment on multiple items at once and then automatically close them afterwards.</h2>
+  <h1>Github Multi-Item Interactor</h1>
+  <h2>Close or Comment on multiple GH items (i.e. Issues, or PRs) at once!</h2>
 </div>
 <div class="form-header">
   <% if (Object.keys(errors).length !== 0) { %>
@@ -30,17 +30,22 @@
   
     <div class="form-field">
     <label for="repo">Repository:</label>
-    <input class="input" id="repo" name="repo" type="text" value="" placeholder="dmitryvinn/tea-shop-flexbox" required>
+    <input class="input" id="repo" name="repo" type="text" value="" placeholder="dmitryvinn/gh-multi-interactor" required>
   </div> 
 
   <div class="form-field">
-    <label for="issues">Issues to comment on and close:</label>
-    <input class="input" id="issues" name="issues" type="text" value="" placeholder="1,21,51,52" required>
+    <label for="items">GH Items to process:</label>
+    <input class="input" id="items" name="items" type="text" value="" placeholder="1,21,51,52" required>
   </div> 
 
   <div class="form-field">
-    <label for="comment">Comment before closing:</label>
-    <textarea class="input" id="comment" name="comment">Closing, thank you!</textarea>
+    <label for="shouldClose">Close Items?</label>
+      <input type="checkbox" id="shouldClose" name="shouldClose" value="close">
+  </div> 
+
+  <div class="form-field">
+    <label for="comment">Comment:</label>
+    <textarea class="input" id="comment" name="comment">Thank you for your contribution!</textarea>
   </div> 
   <div class="form-actions">
     <button class="btn" type="submit">Process Issues</button>
