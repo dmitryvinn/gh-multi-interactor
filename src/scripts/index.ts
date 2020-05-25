@@ -2,6 +2,7 @@ import { Octokit } from "@octokit/rest";
 
 const CLOSED_ITEM_STATE = 'closed'
 
+// TODO: limit for 5K requests, rename to #process function, handle errors
 export function processIssues(apiToken: string, repo: string, issues: number[], comment: string) {
   const octokit = new Octokit({
     auth: apiToken,
