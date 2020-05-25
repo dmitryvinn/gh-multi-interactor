@@ -1,0 +1,52 @@
+<% if (messages.success) { %>
+  <div class="form-header">
+  <h1>Github Multi-Item Interactor!</h1>
+</div>
+  <div class="flash flash-success"><%= messages.success %></div>
+<% } else { %>
+
+<div class="form-header">
+  <h1>Welcome to Github Multi-Item Interactor!</h1>
+  <h2>You can use this form to comment on multiple items at once and then automatically close them afterwards.</h2>
+</div>
+<div class="form-header">
+  <% if (Object.keys(errors).length !== 0) { %>
+    <h2 class="errors-heading">Oops, please correct the following:</h2>
+    <ul class="errors-list">
+      <% Object.values(errors).forEach(error => { %>
+        <li><%= error.msg %></li>
+      <% }) %>
+    </ul>
+  <% } %>
+</div>
+
+<form method="post" action="/" novalidate>
+  <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+
+  <div class="form-field">
+    <label for="apiToken">Personal API Token (<a href="https://help.github.com/en/github/authenticating-to-github/creating-a-personal-access-token-for-the-command-line">How to get one</a>):</label>
+    <input class="input" id="apiToken" name="apiToken" type="password" value="" required>
+  </div>
+  
+    <div class="form-field">
+    <label for="repo">Repository:</label>
+    <input class="input" id="repo" name="repo" type="text" value="" placeholder="dmitryvinn/tea-shop-flexbox" required>
+  </div> 
+
+  <div class="form-field">
+    <label for="issues">Issues to comment on and close:</label>
+    <input class="input" id="issues" name="issues" type="text" value="" placeholder="1,21,51,52" required>
+  </div> 
+
+  <div class="form-field">
+    <label for="comment">Comment before closing:</label>
+    <textarea class="input" id="comment" name="comment">Closing, thank you!</textarea>
+  </div> 
+  <div class="form-actions">
+    <button class="btn" type="submit">Process Issues</button>
+  </div>
+</form>
+<div class="form-footer">
+  <h4>See code available <a href="https://github.com/dmitryvinn/gh-multi-interactor">here</a>.</h4>
+</div>
+<% } %>
