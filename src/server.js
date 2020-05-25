@@ -43,6 +43,6 @@ app.use((err, req, res, next) => {
   res.status(500).send('Something broke!');
 });
 
-app.listen(3000, () => {
-  console.log('App running at http://localhost:3000');
+app.listen(process.env.PORT || 5000), () => {
+  console.log('App is running');
 });
