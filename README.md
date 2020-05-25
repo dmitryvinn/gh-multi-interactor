@@ -5,7 +5,7 @@ This app helps users interact with multiple GitHub items (i.e. issues, PRs, etc.
 
 Currently, this app allows you to comment on and close the GitHub items.
 
-![app](./assets/app.png =250x)
+![app](./assets/app.png)
 
 ## How to Use
 
