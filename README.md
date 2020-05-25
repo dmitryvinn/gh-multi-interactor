@@ -13,6 +13,7 @@ Currently, this app allows you to comment on and close the GitHub items.
 1) Go to a [Heroku instance of the app](https://gh-multi-interactor.herokuapp.com/)
 
 2) Enter your [Personal GitHub API Token](https://help.github.com/en/github/authenticating-to-github/creating-a-personal-access-token-for-the-command-line) for the repo
+    **Note:** If you're working with public repos, at the very least your token needs to have ```repo:public_repo``` access
 
 3) Enter repo name following a format: [ORG_NAME/REPO_NAME]. To illustrate, for "https://github.com/nodejs/node" only enter *"nodejs/node"*
 
@@ -23,7 +24,7 @@ Currently, this app allows you to comment on and close the GitHub items.
 
 5) If you want to close the GH items entered in the previous step, check the checkbox for "Close Items?". By default, the items are not closed.
     **Note:** If you are working with already closed items, this checkbox will do nothing (i.e. it won't close the items)
-    
+
 6) Enter a comment for your GH items
     **Note:** If the field is left empty, no comment will be made on the GH issues
     **Note:** If the items are already closed, the comment will still be posted.
